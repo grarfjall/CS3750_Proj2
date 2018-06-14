@@ -1,0 +1,11 @@
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/bin/Debug/netcoreapp2.0/CS3750_Proj2.deps.json
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/bin/Debug/netcoreapp2.0/CS3750_Proj2.runtimeconfig.json
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/bin/Debug/netcoreapp2.0/CS3750_Proj2.runtimeconfig.dev.json
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/bin/Debug/netcoreapp2.0/CS3750_Proj2.dll
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/bin/Debug/netcoreapp2.0/CS3750_Proj2.pdb
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.csprojResolveAssemblyReference.cache
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.csproj.CoreCompileInputs.cache
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.AssemblyInfoInputs.cache
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.AssemblyInfo.cs
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.dll
+/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj/Debug/netcoreapp2.0/CS3750_Proj2.pdb

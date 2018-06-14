@@ -1,4 +1,14 @@
 ﻿<Properties StartupConfiguration="{065BD733-A3B6-49F2-9125-54A2C3BB0658}|Default">
-  <MonoDevelop.Ide.ItemProperties.CS3750__Proj2 FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CS3750_Proj2/Startup.cs">
+    <Files>
+      <File FileName="CS3750_Proj2/Startup.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.CS3750__Proj2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>
