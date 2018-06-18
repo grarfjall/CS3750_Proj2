@@ -1,0 +1,11 @@
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\bin\Release\netcoreapp2.0\CS3750_Proj2.deps.json
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\bin\Release\netcoreapp2.0\CS3750_Proj2.runtimeconfig.json
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\bin\Release\netcoreapp2.0\CS3750_Proj2.runtimeconfig.dev.json
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\bin\Release\netcoreapp2.0\CS3750_Proj2.dll
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\bin\Release\netcoreapp2.0\CS3750_Proj2.pdb
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.csprojAssemblyReference.cache
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.csproj.CoreCompileInputs.cache
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.AssemblyInfoInputs.cache
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.AssemblyInfo.cs
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.dll
+D:\Libraries\Documents\CS3750_Proj2\CS3750_Proj2\CS3750_Proj2\obj\Release\netcoreapp2.0\CS3750_Proj2.pdb
