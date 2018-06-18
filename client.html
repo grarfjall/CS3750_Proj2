@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS3750 Game of Life</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+var numCells = 16;
+var cells = new Array(numCells);
+var lineWidth = 2;
+var width;
+var scale;
+var context;
+
+function drawCell(x, y) {
+	context.fillStyle = cells[x][y];
+	context.beginPath();
+	context.rect(x * scale + lineWidth, y * scale + lineWidth, scale - lineWidth, scale - lineWidth);
+	context.fill();
+}
+
+function drawCells(cells) {
+	for (var x = 0; x < numCells; x++) {
+		for (var y = 0; y < numCells; y++) {
+			alert('' + x + ', ' + y);
+			drawCell(x, y);
+		}
+	}
+}
+
+function drawGrid() {
+	width = $('canvas')[0].width;
+	scale = (width - 1) / numCells;
+	context = $('canvas')[0].getContext('2d');
+
+	context.fillStyle = 'black';
+
+	context.beginPath();
+	context.rect(0, 0, width, width);
+	context.fill();
+	
+	drawCells();
+}
+
+$(document).ready(function(){
+	for (var x = 0; x < numCells; x++) {
+		var column = new Array(numCells);
+		for (var y = 0; y < numCells; y++) {
+			column[y] = 'white';
+		}
+		cells[x] = column;
+	}
+
+	drawGrid();
+	cells[6][6] = 'red';
+	drawCells();
+});
+		</script>
+		<style type="text/css">
+canvas {
+	border: 2px solid black;
+}
+		</style>
+	</head>
+	<body>
+		<canvas width="600" height="600">HTML5 Canvas not supported</canvas>
+	</body>
+</html>
