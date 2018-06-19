@@ -33,6 +33,16 @@ public class Conways_Game_Of_Life
             newGeneration[x, y] = DEAD;
     }
 
+    public static void click(int x, int y, string color)
+    {
+
+    }
+
+    private static void pushCells()
+    {
+
+    }
+
 	private static void step()
 	{
 		int[,] newGeneration = new int[NUM_CELLS, NUM_CELLS];
@@ -43,6 +53,8 @@ public class Conways_Game_Of_Life
 			newGeneration[x, y] = updateCell(x, y);
 
         cells = newGeneration;
+
+        pushCells();
 	}
 
     private static string updateCell(int x, int y)
