@@ -12726,30 +12726,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Gopog\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/jaredlancaster/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libraries\\Documents\\CS3750_Proj2\\CS3750_Proj2\\CS3750_Proj2\\CS3750_Proj2.csproj",
+      "projectUniqueName": "/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2.csproj",
       "projectName": "CS3750_Proj2",
-      "projectPath": "D:\\Libraries\\Documents\\CS3750_Proj2\\CS3750_Proj2\\CS3750_Proj2\\CS3750_Proj2.csproj",
-      "packagesPath": "C:\\Users\\Gopog\\.nuget\\packages\\",
-      "outputPath": "D:\\Libraries\\Documents\\CS3750_Proj2\\CS3750_Proj2\\CS3750_Proj2\\obj\\",
+      "projectPath": "/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2.csproj",
+      "packagesPath": "/Users/jaredlancaster/.nuget/packages/",
+      "outputPath": "/Users/jaredlancaster/Documents/CS3750_Proj2/CS3750_Proj2/CS3750_Proj2/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Gopog\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jaredlancaster/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12766,18 +12764,19 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.AspNet.SignalR": {
+          "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
-            "version": "[2.2.3, )"
+            "version": "2.0",
+            "autoReferenced": true
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "[2.0.0, )"
+            "version": "2.0.0"
           },
-          "Microsoft.NETCore.App": {
+          "Microsoft.AspNet.SignalR": {
             "target": "Package",
-            "version": "[2.0.0, )",
-            "autoReferenced": true
+            "version": "2.2.3"
           }
         },
         "imports": [

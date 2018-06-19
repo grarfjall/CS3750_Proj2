@@ -1,7 +1,13 @@
 ﻿<Properties StartupConfiguration="{065BD733-A3B6-49F2-9125-54A2C3BB0658}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CS3750_Proj2/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CS3750_Proj2/Pages/Index.cshtml">
     <Files>
       <File FileName="CS3750_Proj2/Startup.cs" Line="1" Column="1" />
+      <File FileName="CS3750_Proj2/server.cs" Line="71" Column="30" />
+      <File FileName="CS3750_Proj2/client.html" Line="20" Column="12" />
+      <File FileName="CS3750_Proj2/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="CS3750_Proj2/Properties/PublishProfiles/CS3750Proj2 - Web Deploy.pubxml" Line="1" Column="1" />
+      <File FileName="CS3750_Proj2/Pages/Index.cshtml.cs" Line="1" Column="1" />
+      <File FileName="CS3750_Proj2/Pages/Index.cshtml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CS3750__Proj2 PreferredExecutionTarget="MonoDevelop.Default" />
