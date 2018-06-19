@@ -6,7 +6,7 @@
 		<script type="text/javascript">
 let color = '#FF0000';
 
-let numCells = 16;
+let numCells = 30;
 let cells = new Array(numCells);
 for (let x = 0; x < numCells; x++) {
 	let column = new Array(numCells);
@@ -54,24 +54,25 @@ function sendClick(x, y){
 		curColor = color;
 	}
 	cells[x][y] = curColor;
-	drawGrid();
+	drawCell(x, y);
+	$.connection.click(x, y, color);
 }
 
-function sendChangeColor(newColor){
-	color = newColor;
-	alert(color);
-}
-
-function sendStart(){
-	alert('Start');
+function sendPlay(){
+	$.connection.play();
 }
 
 function sendPause(){
-	alert('Pause');
+	$.connection.pause();
 }
 
 function sendReset(){
-	alert('Reset');
+	$.connection.reset();
+}
+
+function receiveCells(newCells){
+	cells = newCells();
+	drawGrid();
 }
 
 function onClick(e){
@@ -88,17 +89,11 @@ function onReady(){
 	context = canvas.getContext('2d');
 	canvas.onclick = onClick;
 
-	drawGrid();
+	drawGrid(); // Empty grid while we wait for first update (<= 1 sec)
 }
 
 function onColorChange(){
-	let newColor = $('select')[0].value;
-
-	if (newColor == color){
-		return;
-	}
-
-	sendChangeColor(newColor);
+	color = $('select')[0].value;
 }
 
 $(document).ready(onReady);
@@ -137,11 +132,11 @@ body {
 	</head>
 	<body>
 		<div id="main" class="center" width="100%">
-			<canvas class="center" width="600" height="600">
+			<canvas class="center" width="800" height="800">
 				HTML5 Canvas not supported
 			</canvas>
 			<div id="controls">
-				<button onclick="sendStart()"><b>Start</b></button><!--
+				<button onclick="sendPlay()"><b>Play</b></button><!--
 				--><button onclick="sendPause()"><b>Pause</b></button><!--
 				--><button onclick="sendReset()"><b>Reset</b></button><!--
 				--><select onchange="onColorChange()">
