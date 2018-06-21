@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Drawing;
 using System.Timers;
+using Microsoft.AspNet.SignalR;
 
-public class Conways_Game_Of_Life
+public class Conways_Game_Of_Life : Hub
 {
-    private static readonly int NUM_CELLS = 16;
-    private static readonly string DEAD = "#FFFFFF";
-    private static string[,] cells;
-    private static Timer timer;
+    private const int NUM_CELLS = 16;
+    private const string DEAD = "#FFFFFF";
+    private string[,] cells;
+    private Timer timer;
 
-    static Conways_Game_Of_Life()
+    public Conways_Game_Of_Life()
     {
         timer = new Timer(1000);
         timer.Elapsed += new ElapsedEventHandler(step);
@@ -17,17 +18,17 @@ public class Conways_Game_Of_Life
         reset();
     }
 
-    public static void play()
+    public void play()
     {
         timer.Enabled = true;
     }
 
-    public static void pause()
+    public void pause()
     {
         timer.Enabled = false;
     }
 
-    public static void reset()
+    public void reset()
     {
         pause();
         for (int x = 1; x < NUM_CELLS; x++)
@@ -35,7 +36,7 @@ public class Conways_Game_Of_Life
             cells[x, y] = DEAD;
     }
 
-	private static void step(Object source, System.Timers.ElapsedEventArgs e)
+	private void step(Object source, System.Timers.ElapsedEventArgs e)
 	{
 		string[,] newGeneration = new string[NUM_CELLS, NUM_CELLS];
 
@@ -45,9 +46,10 @@ public class Conways_Game_Of_Life
 			newGeneration[x, y] = updateCell(x, y);
 
         cells = newGeneration;
+        Client.All.setCells(cells);
 	}
 
-    private static string updateCell(int x, int y)
+    private string updateCell(int x, int y)
     {
         int numNeighbors = 0;
         int r = 0;
@@ -66,10 +68,12 @@ public class Conways_Game_Of_Life
                 {
                     numNeighbors++;
 					r += Convert.ToInt32(cells[nx, ny].Substring(1, 2), 16);
+                    g += Convert.ToInt32(cells[nx, ny].Substring(3, 4), 16);
+                    b += Convert.ToInt32(cells[nx, ny].Substring(5, 6), 16);
 					//Color c = System.Drawing.ColorTranslator.FromHtml(cells[nx, ny]); //find a usable alternative for .NET Core
-                    r += c.R;
-                    g += c.G;
-                    b += c.B;
+                    //r += c.R;
+                    //g += c.G;
+                    //b += c.B;
                 }
             }
         }
