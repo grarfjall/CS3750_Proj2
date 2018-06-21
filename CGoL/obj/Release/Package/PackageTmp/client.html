@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CS3750 Game of Life</title>
+		<script src="Scripts/jquery-3.3.1.js"></script>
+	    <script src="Scripts/jquery.signalR-2.2.2.min.js"></script>
+	    <script src="signalr/hubs"></script>
+		<script type="text/javascript">
+            let color = '#FF0000';
+
+            let numCells = 16;
+            let cells = new Array(numCells);
+            for (let x = 0; x < numCells; x++) {
+	            let column = new Array(numCells);
+	            for (let y = 0; y < numCells; y++) {
+		            column[y] = '#FFFFFF';
+	            }
+	            cells[x] = column;
+            }
+
+            let lineWidth = 2;
+            let canvas;
+            let width;
+            let scale;
+            let context;
+            let server;
+
+            function drawCell(x, y) {
+	            context.fillStyle = cells[x][y];
+	            context.beginPath();
+	            context.rect(x * scale + lineWidth, y * scale + lineWidth, scale - lineWidth, scale - lineWidth);
+	            context.fill();
+            }
+
+            function drawCells(cells) {
+	            for (let x = 0; x < numCells; x++) {
+		            for (let y = 0; y < numCells; y++) {
+			            drawCell(x, y);
+		            }
+	            }
+            }
+
+            function drawGrid() {
+	            context.fillStyle = '#000000';
+	            context.beginPath();
+	            context.rect(0, 0, width, width);
+	            context.fill();
+	
+	            drawCells();
+            }
+
+            function sendClick(x, y){
+	            server.click(x, y, color);
+            }
+
+            function sendPlay(){
+	            server.play();
+            }
+
+            function sendPause(){
+	            server.pause();
+            }
+
+            function sendReset(){
+	            server.reset();
+            }
+
+            function setCell(x, y, color) {
+                cells[x][y] = color;
+                drawGrid();
+            }
+
+            function setCells(newCells){
+	            cells = newCells;
+	            drawGrid();
+            }
+
+            function onClick(e){
+	            let boundingRect = canvas.getBoundingClientRect();
+	            let x = Math.floor((e.clientX - boundingRect.left)/scale);
+	            let y = Math.floor((e.clientY - boundingRect.top)/scale);
+	            sendClick(x, y);
+            }
+
+            function onReady(){
+	            canvas = $('canvas')[0];
+	            width = canvas.width;
+	            scale = (width - 1) / numCells;
+	            context = canvas.getContext('2d');
+	            canvas.onclick = onClick;
+
+                let gameOfLife = $.connection.gameOfLife;
+                server = gameOfLife.server;
+                gameOfLife.client.setCells = setCells;
+                gameOfLife.client.setCell = setCell;
+                $.connection.hub.start();
+
+	            drawGrid();
+            }
+
+            function onColorChange(){
+	            color = $('select')[0].value;
+            }
+
+            $(document).ready(onReady);
+		</script>
+		<style type="text/css">
+canvas {
+	border: 2px solid black;
+}
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#main {
+	background-color: #777777;
+	padding: 20px;
+}
+#controls {
+	background-color: #444444;
+	margin-top: 20px;
+	padding: 10px;
+}
+button, select {
+	width: 25%;
+	height: 30px;
+	font-size: 20px;
+	margin: 0px;
+	padding: 0px;
+	display: inline-block;
+}
+body {
+	margin: 0px;
+	background-color: #000000;
+}
+		</style>
+	</head>
+	<body>
+		<div id="main" class="center" width="100%">
+			<canvas class="center" width="800" height="800">
+				HTML5 Canvas not supported
+			</canvas>
+			<div id="controls">
+				<button onclick="sendPlay()"><b>Play</b></button><!--
+				--><button onclick="sendPause()"><b>Pause</b></button><!--
+				--><button onclick="sendReset()"><b>Reset</b></button><!--
+				--><select onchange="onColorChange()">
+					<option value="#FF0000">Red</option>
+					<option value="#00FF00">Green</option>
+					<option value="#0000FF">Blue</option>
+				</select>
+			</div>
+		</div>
+	</body>
+</html>
