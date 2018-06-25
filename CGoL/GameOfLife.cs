@@ -63,10 +63,9 @@ namespace SignalRChat
 
         public void click(int x, int y, string color)
         {
-            if (cells[x, y] == DEAD)
-                cells[x, y] = color;
-            else
+            if (cells[x, y] != DEAD)
                 color = DEAD;
+            cells[x, y] = color;
             Clients.All.setCell(x, y, color);
 
         }
